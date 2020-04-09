@@ -1,0 +1,44 @@
+
+  <mat-toolbar color="" class="mat-toolbar mat-elevation-z4">
+
+      <!-- <mat-toolbar > -->
+      <!-- <img src="assets/image/jlr-logo.png" height="48px" width="96px" />
+      <span style="margin-left:20px;">Domain Application Tracker</span> -->
+      <!-- <div class="spacer"></div> -->
+      <!-- </mat-toolbar-row> -->
+        <!-- </mat-toolbar> -->
+
+        <!-- <mat-toolbar color="primary" class="mat-elevation-z4"> -->
+        <!-- <mat-icon>eco</mat-icon> -->
+        <!-- <mat-toolbar-row color="primary" class="mat-elevation-z4"> -->
+          
+          <button mat-icon-button [matMenuTriggerFor]="main_menu" style="margin-right:10px;">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #main_menu="matMenu">
+            <ng-container *ngFor="let mainItem of menuInfo">
+              <span *ngIf="!checkSubmenu(mainItem.subMenu)">
+                <button mat-menu-item [routerLink]="mainItem.link">{{ mainItem.name }}</button>
+              </span>
+              <span *ngIf="checkSubmenu(mainItem.subMenu)">
+                <button mat-menu-item [matMenuTriggerFor]="sub_menu">{{ mainItem.name }}</button>
+                <mat-menu #sub_menu="matMenu">
+                  <button *ngFor="let subItem of mainItem.subMenu" mat-menu-item
+                    [routerLink]="subItem.link">{{subItem.name}}</button>
+                </mat-menu>
+              </span>
+            </ng-container>
+          </mat-menu>
+
+         <a href="dashobard"> <img src="assets/image/jlr-logo.png" height="48px" width="96px" /> </a>
+      <span style="margin-left:10px;">Portfolio Project Tracker</span>
+
+          <div class="spacer"></div>
+          <a mat-mini-fab color="accent">
+            <mat-icon matTooltip="Last Login: {{today | date:'medium'}}">account_circle</mat-icon>
+          </a>
+          <!-- <a mat-fab color="accent">
+    <mat-icon>account_circle</mat-icon>
+  </a> -->
+
+  </mat-toolbar>

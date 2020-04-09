@@ -1,0 +1,37 @@
+<div class="container">
+
+    
+    <mat-radio-group [(ngModel)]="search.type" #radioGroup="matRadioGroup" name="searchType">
+        <mat-radio-button value='portfolio'>Portfolio</mat-radio-button>
+        <mat-radio-button value='application'>Application</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="full-width">
+        <mat-label>Search Text</mat-label>
+        <input matInput placeholder="Enter text to search" [(value)]="search.text" name="searchText">
+    </mat-form-field>
+    <button mat-icon-button (click)="searchData()">
+        <mat-icon>search</mat-icon>
+      </button>
+      <h3>{{err|json}}</h3>
+    <mat-card class="card" *ngFor="let p of portfolios">
+        <mat-card-header>
+            <!-- <div mat-card-avatar class="header-image"></div> -->
+            <mat-card-title>{{p.title}}</mat-card-title>
+            <mat-card-subtitle>{{p.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content>
+            <p>
+                {{p.content}}
+                <!-- Manager: {{p.manager}} | Cost Center: {{p.costCenter}} -->
+
+            </p>
+            <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costcenter}}
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button color="primary">Detail</button>
+            <button mat-button color="primary">View Projects</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

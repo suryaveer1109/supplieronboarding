@@ -1,0 +1,13 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+.mat-toolbar .mat-toolbar-row, .mat-toolbar-single-row {
+    background: #3d56e087;
+    height: 46px;
+    position: sticky;
+    top: 0; /*Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+
+

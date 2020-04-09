@@ -1,0 +1,59 @@
+<div class="container">
+    <h2 style="margin-top: 20px;">Add Menu</h2>
+
+    <form #menuForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <!-- <div class="alert alert-danger alert-dismissible" *ngIf="differentPassword">
+        <a class="close" data-dismiss="alert" aria-label="close" (click)="differentPassword=''">&times;</a>
+        {{differentPassword}}
+      </div> -->
+
+        <!-- <div class="form-group">
+        <label>Menu Name</label>
+        <input type="text" style="max-width: 500px;" #name="ngModel" required class="form-control"
+          [class.is-invalid]="name.invalid && name.touched" autocomplete="off" name="name" [(ngModel)]="menuModel.name">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+      </div> -->
+
+            <mat-label>Menu Type</mat-label> <br><br>
+
+            <mat-radio-group [(ngModel)]="menu.type" #radioGroup="matRadioGroup" name="menu-type">
+                <mat-radio-button value='0'>Main Menu</mat-radio-button>
+                <mat-radio-button value='1'>Sub Menu</mat-radio-button>
+            </mat-radio-group>
+
+        <div *ngIf="menu.type=='1'">
+            <mat-form-field>
+                <mat-label>Parent Menu</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="menu.parentMenuId">
+                    <mat-option *ngFor="let m of menus" [value]="m.id">
+                        {{m.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>Menu Name</mat-label>
+            <input matInput placeholder="Enter Menu Name" [(value)]="menu.name" name="menuName">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>Menu Description</mat-label>
+            <input matInput placeholder="Enter Menu Description" [(value)]="menu.desc" name="menuDesc">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+            <mat-label>Menu Route</mat-label>
+            <input matInput placeholder="Enter Route" [(value)]="menu.route" name="menuRoute">
+        </mat-form-field>
+
+        <div>
+            <button class="btn btn-primary" style="margin-top: 20px;" [disabled]="menuForm.form.invalid"
+                type="submit">Add
+                Menu</button>
+        </div>
+
+    </form>
+
+</div>

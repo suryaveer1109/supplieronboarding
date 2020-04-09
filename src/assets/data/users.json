@@ -1,0 +1,10 @@
+[
+    {"name": "A","userId": "A","emailId": "1","password": "123","confirmPassword": "123"
+    },
+    {"name": "B","userId": "B","emailId": "2","password": "123","confirmPassword": "123"
+    },
+    {"name": "C","userId": "C","emailId": "3","password": "123","confirmPassword": "123"
+    },
+    {"name": "D","userId": "D","emailId": "4","password": "123","confirmPassword": "123"
+    }
+]

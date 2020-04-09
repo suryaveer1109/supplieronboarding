@@ -3,6 +3,7 @@ import { HttpService } from '../http.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from '../user';
+import { AppUrlComponent } from '../app-url/app-url.component';
 
 @Component({
   selector: 'app-user-details',
@@ -21,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(private _userService:HttpService) { }
 
   ngOnInit(): void {
-    this._userService.getRequest('/assets/data/users.json')
+    this._userService.getRequest(AppUrlComponent.USER_DETAILS)
     .subscribe(data=>this.userDetails=data,
       error=>this.err=error?.message);
     this.dataSource = new MatTableDataSource<User>(this.userDetails);

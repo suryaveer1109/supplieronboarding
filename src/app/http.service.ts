@@ -24,7 +24,6 @@ export class HttpService {
 
   /** POST request*/
   postRequest(url: any, data: any): Observable<any> {
-    console.log("Post Data",data);
     return this.http.post<any>(url, data, httpOptions);
   }
 

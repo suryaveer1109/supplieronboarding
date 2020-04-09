@@ -12,9 +12,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MaterialComponents = [MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule,
-    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule];
+    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule,MatSnackBarModule];
 
 @NgModule({
     imports: [MaterialComponents],

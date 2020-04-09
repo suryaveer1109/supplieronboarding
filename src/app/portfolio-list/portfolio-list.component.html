@@ -1,6 +1,5 @@
 <div class="container">
 
-    
     <mat-radio-group [(ngModel)]="search.type" #radioGroup="matRadioGroup" name="searchType">
         <mat-radio-button value='portfolio'>Portfolio</mat-radio-button>
         <mat-radio-button value='application'>Application</mat-radio-button>
@@ -13,7 +12,7 @@
     <button mat-icon-button (click)="searchData()">
         <mat-icon>search</mat-icon>
       </button>
-      <h3>{{err|json}}</h3>
+
     <mat-card class="card" *ngFor="let p of portfolios">
         <mat-card-header>
             <!-- <div mat-card-avatar class="header-image"></div> -->

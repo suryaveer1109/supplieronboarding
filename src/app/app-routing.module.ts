@@ -7,6 +7,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { MenuAddComponent } from './menu-add/menu-add.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
+import { AppUrlComponent } from './app-url/app-url.component';
+
 
 
 const routes: Routes = [
@@ -20,7 +22,7 @@ const routes: Routes = [
 ];
 
 export const routingComponent = [UserDetailsComponent, ContentComponent, SignupComponent,
-  PageNotFoundComponent, NavbarComponent, MenuAddComponent, PortfolioListComponent]
+  PageNotFoundComponent, NavbarComponent, MenuAddComponent, PortfolioListComponent, AppUrlComponent];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

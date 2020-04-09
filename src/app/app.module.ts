@@ -9,6 +9,7 @@ import { MaterialModule } from './material.module';
 import { HttpService } from './http.service';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import  { HttpClientModule } from '@angular/common/http';
+import { AppUrlComponent } from './app-url/app-url.component';
 
 
 @NgModule({

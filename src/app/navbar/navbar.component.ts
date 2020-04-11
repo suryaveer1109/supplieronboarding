@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   
   public menuInfo = [
     {
-      name: "Home", link: "content",
+      name: "Home", link: "",
       subMenu: [{name:"Portfolios",link:"portfolioList"}]
     },
     {
@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
       name: "App Management", link: "",
       subMenu: [{ name: "Add New Menu", link: "menuAdd" }]
     },
+    { name: "Add App code", link: "content", subMenu: null },
     { name: "About Us", link: "test", subMenu: null },
     { name: "Sign Up", link: "signup", subMenu: null },
     { name: "Logout", link: "test", subMenu: null }
@@ -45,4 +46,10 @@ export class NavbarComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
+
+  myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  
 }

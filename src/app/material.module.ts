@@ -13,9 +13,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const MaterialComponents = [MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule,
-    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule,MatSnackBarModule];
+    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule,MatSnackBarModule,MatTabsModule];
 
 @NgModule({
     imports: [MaterialComponents],

@@ -34,9 +34,16 @@
       <span style="margin-left:10px;" id="app_title"></span>
  
           <div class="spacer"></div>
-          <a mat-mini-fab color="accent">
-            <mat-icon matTooltip="Last Login: {{today | date:'medium'}}">account_circle</mat-icon>
+          <span class="parentpopup">
+          <a mat-mini-fab color="accent" class="popup" >
+            <mat-icon (click)="myFunction()" >account_circle</mat-icon>
+            <!-- <div class="popup"> -->
+            <span class="popuptext" id="myPopup">
+              Last Login: {{today | date:'medium'}}<br>Other details coming soon..
+            </span>
+          <!-- </div> -->
           </a>
+        </span>
           <!-- <a mat-fab color="accent">
     <mat-icon>account_circle</mat-icon>
   </a> -->

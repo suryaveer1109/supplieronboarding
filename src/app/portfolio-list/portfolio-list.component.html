@@ -1,36 +1,54 @@
 <div class="container">
+<mat-tab-group color="accent" (selectedTabChange)="tabChange($event)">
+    <mat-tab label="Portfolio" > 
 
-    <mat-radio-group [(ngModel)]="search.type" #radioGroup="matRadioGroup" name="searchType">
-        <mat-radio-button value='portfolio'>Portfolio</mat-radio-button>
-        <mat-radio-button value='application'>Application</mat-radio-button>
-    </mat-radio-group>
+        <!-- <mat-radio-group [(ngModel)]="search.type" #radioGroup="matRadioGroup" name="searchType">
+            <mat-radio-button value='portfolio'>Portfolio</mat-radio-button>
+            <mat-radio-button value='application'>Application</mat-radio-button>
+        </mat-radio-group> -->
+    
+        <mat-form-field class="full-width">
+            <mat-label>Search Text</mat-label>
+            <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
+        </mat-form-field>
+        <button mat-icon-button (click)="searchData('portfolio')">
+            <mat-icon>search</mat-icon>
+          </button>
+    
+        <mat-card class="card" *ngFor="let p of portfolios">
+            <mat-card-header>
+                <mat-card-title>{{p.title}}</mat-card-title>
+                <mat-card-subtitle>{{p.subtitle}}</mat-card-subtitle>
+            </mat-card-header>
+           
+            <mat-card-content>
+                <p>
+                    {{p.content}}
+    
+                </p>
+                <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costcenter}}
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-button color="primary">Detail</button>
+                <button mat-button color="primary">View Projects</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
 
-    <mat-form-field class="full-width">
-        <mat-label>Search Text</mat-label>
-        <input matInput placeholder="Enter text to search" [(value)]="search.text" name="searchText">
-    </mat-form-field>
-    <button mat-icon-button (click)="searchData()">
-        <mat-icon>search</mat-icon>
-      </button>
+    <mat-tab label="Projects">  
+        <mat-form-field class="full-width">
+            <mat-label>Search Text</mat-label>
+            <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
+        </mat-form-field>
+        <button mat-icon-button (click)="searchData('projects')">
+            <mat-icon>search</mat-icon>
+          </button>
+    </mat-tab>
 
-    <mat-card class="card" *ngFor="let p of portfolios">
-        <mat-card-header>
-            <!-- <div mat-card-avatar class="header-image"></div> -->
-            <mat-card-title>{{p.title}}</mat-card-title>
-            <mat-card-subtitle>{{p.subtitle}}</mat-card-subtitle>
-        </mat-card-header>
-        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-        <mat-card-content>
-            <p>
-                {{p.content}}
-                <!-- Manager: {{p.manager}} | Cost Center: {{p.costCenter}} -->
-
-            </p>
-            <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costcenter}}
-        </mat-card-content>
-        <mat-card-actions align="end">
-            <button mat-button color="primary">Detail</button>
-            <button mat-button color="primary">View Projects</button>
-        </mat-card-actions>
-    </mat-card>
+  </mat-tab-group>
 </div>
+
+
+    
+
+    

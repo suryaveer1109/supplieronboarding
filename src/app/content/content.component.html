@@ -1,2 +1,24 @@
-<p>Hello User!!</p>
-<a href="/">Login Here</a>
+<div class="container" style="margin-top: 20px;">
+   
+    <form #userForm="ngForm" novalidate>
+        <mat-form-field>
+            <mat-label>Enter app url/code:</mat-label>
+            <input matInput type="text" [(ngModel)]="applCode" name="clearable" #appCode="ngModel" required>
+            <button mat-button *ngIf="applCode" matSuffix mat-icon-button aria-label="Clear" (click)="applCode=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            <small class="text-danger" [class.d-none]="appCode.valid || appCode.untouched">App Url/Code is
+                required</small>
+        </mat-form-field> <br>
+
+        
+    </form>
+
+    <button mat-stroked-button color="primary" style="margin-top: 5px;" [disabled]="userForm.form.invalid" (click)="onSubmit()">
+        Add Url
+    </button>
+    <button mat-stroked-button color="primary" style="margin: 5px 10px;" (click)="setDefaultUrl()">
+        Set Default
+    </button>
+    
+</div>

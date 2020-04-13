@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { AppUrlComponent } from './app-url/app-url.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   private dataSource = new BehaviorSubject('NOT_AVAILABLE');
-  private appUrl = new BehaviorSubject('http://localhost:8080');
+  private appUrl = new BehaviorSubject(AppUrlComponent.SERVICE_URL);
   currentData = this.dataSource.asObservable();
   currentAppUrl = this.appUrl.asObservable();
 
@@ -20,7 +21,7 @@ export class DataService {
     if (urlCode) {
       this.appUrl.next('https://' + urlCode + '.ngrok.io');
     } else {
-      this.appUrl.next('http://localhost:8080');
+      this.appUrl.next(AppUrlComponent.SERVICE_URL);
     }
   }
 

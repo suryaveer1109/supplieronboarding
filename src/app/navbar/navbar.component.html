@@ -12,8 +12,11 @@
         <!-- <mat-icon>eco</mat-icon> -->
         <!-- <mat-toolbar-row color="primary" class="mat-elevation-z4"> -->
           
-          <button mat-icon-button [matMenuTriggerFor]="main_menu" style="margin-right:10px;">
+          <button [disabled]="menuError" mat-icon-button [matMenuTriggerFor]="main_menu" style="margin-right:10px;">
             <mat-icon>menu</mat-icon>
+          </button>
+          <button *ngIf="menuError" mat-icon-button matTooltip="Refresh to get Menus" style="margin-right:10px;" (click)="getMenus()">
+            <mat-icon>refresh</mat-icon>
           </button>
           <mat-menu #main_menu="matMenu">
             <ng-container *ngFor="let mainItem of menuInfo">

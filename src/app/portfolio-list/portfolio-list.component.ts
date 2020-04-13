@@ -17,7 +17,6 @@ export class PortfolioListComponent implements OnInit {
 
   public err;
   private appUrl;
-  private durationInSeconds = 10;
   public portfolios = [];
   public search = { type: 'portfolio', text: '' };
   selectedIndex;
@@ -66,7 +65,7 @@ export class PortfolioListComponent implements OnInit {
   };
 
   openSnackBar(message, action) {
-    let snackbarRef = this._snackBar.open(message, action, { duration: this.durationInSeconds * 1000 });
+    let snackbarRef = this._snackBar.open(message, action, { duration: AppUrlComponent.durationInSeconds * 1000 });
   };
 
   openProtfolioDetail(portfolio) {

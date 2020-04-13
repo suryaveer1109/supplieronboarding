@@ -1,0 +1,88 @@
+<a color="primary" routerLink='/portfolioList' style="padding-left: 10px;">Back</a>
+<div class="container">
+
+    <h2 style="display: inline;">Portfolio Detail</h2> <button mat-button *ngIf="!editTemplate" color="primary"
+        style="padding-left: 10px;" (click)="edit()">Edit</button>
+
+    <!-- <div *ngIf="false" novalidate>
+        <mat-label><strong>Title:  </strong></mat-label>{{portfolio.title}}<div class="mt-2"></div>
+        <mat-label><strong>SubTitle:  </strong></mat-label>{{portfolio.subtitle}}<div class="mt-2"></div>
+        <mat-label><strong>Content:  </strong></mat-label>{{portfolio.content}}<div class="mt-2"></div>
+        <mat-label><strong>Manager:  </strong></mat-label>{{portfolio.manager}}<div class="mt-2"></div>
+        <mat-label><strong>Cost Center:  </strong></mat-label>{{portfolio.costCenter}}<div class="mt-2"></div>
+    </div> -->
+
+<mat-list *ngIf="!editTemplate">
+  <!-- <div mat-subheader>Details</div> -->
+  <mat-list-item class="mat-line-textfamily">
+    <div class="mat-line-heading mat-line-textfamily" mat-line>Title:</div>
+    <div  mat-line> {{portfolio.title}}</div>
+  </mat-list-item><mat-divider></mat-divider>
+  <mat-list-item >
+    <div class="mat-line-heading mat-line-textfamily" mat-line>SubTitle:</div>
+    <div mat-line> {{portfolio.subtitle}}</div>
+  </mat-list-item><mat-divider></mat-divider>
+  <mat-list-item >
+    <div class="mat-line-heading mat-line-textfamily" mat-line>Content:</div>
+    <div mat-line matTooltip="{{portfolio.content}}"> {{portfolio.content}}</div>
+  </mat-list-item><mat-divider></mat-divider>
+  <mat-list-item >
+    <div class="mat-line-heading mat-line-textfamily" mat-line>Manager:</div>
+    <div mat-line> {{portfolio.manager}}</div>
+  </mat-list-item><mat-divider></mat-divider>
+  <mat-list-item >
+    <div class="mat-line-heading mat-line-textfamily" mat-line>Cost Center:</div>
+    <div mat-line> {{portfolio.costCenter}}</div>
+  </mat-list-item>
+</mat-list>
+
+
+    <form *ngIf="editTemplate" #portfolioForm="ngForm" novalidate>
+        <mat-form-field class="full-width">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" placeholder="Enter Title" #title="ngModel" [(ngModel)]="portfolio.title"
+                name="title" required>
+            <small class="text-danger" [class.d-none]="title.valid || title.untouched">Title is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>SubTitle</mat-label>
+            <input matInput type="text" placeholder="Enter Sub-title" #subtitle="ngModel"
+                [(ngModel)]="portfolio.subtitle" name="subtitle" required>
+            <small class="text-danger" [class.d-none]="subtitle.valid || subtitle.untouched">Sub-title is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Content</mat-label>
+            <textarea matInput type="text" placeholder="Enter Content" #content="ngModel"
+                [(ngModel)]="portfolio.content" name="content" required></textarea>
+            <small class="text-danger" [class.d-none]="content.valid || content.untouched">Content is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Manager</mat-label>
+            <input matInput type="text" placeholder="Enter Manager Name" #manager="ngModel"
+                [(ngModel)]="portfolio.manager" name="manager" required>
+            <small class="text-danger" [class.d-none]="manager.valid || manager.untouched">Manager name is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Cost Center</mat-label>
+            <input matInput type="text" placeholder="Enter Cost Center" #costCenter="ngModel"
+                [(ngModel)]="portfolio.costCenter" name="costCenter" required>
+            <small class="text-danger" [class.d-none]="costCenter.valid || costCenter.untouched">Cost center is
+                required</small>
+        </mat-form-field> <br>
+
+        <button mat-raised-button color="primary" style="margin-top: 10px;" [disabled]="portfolioForm.form.invalid"
+            (click)="save()">
+            Save
+        </button>
+    </form>
+
+
+</div>

@@ -14,9 +14,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 const MaterialComponents = [MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule,
-    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule,MatSnackBarModule,MatTabsModule];
+    MatTableModule, MatPaginatorModule, MatSelectModule, MatRadioModule, MatInputModule,MatCardModule,MatTooltipModule,MatSnackBarModule,MatTabsModule,MatListModule];
 
 @NgModule({
     imports: [MaterialComponents],

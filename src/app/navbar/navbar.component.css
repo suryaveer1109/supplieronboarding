@@ -3,7 +3,7 @@
 }
 
 .mat-toolbar .mat-toolbar-row, .mat-toolbar-single-row {
-    background: #332e808f;
+    background: #3b38668f;
     height: 46px;
     position: sticky;
     top: 0; /*Sets the sticky toolbar to be on top */
@@ -19,6 +19,10 @@
   @media screen and (min-width: 501px) {
     #app_title:before {
       content: "Portfolio Project Tracker";
+    }
+
+    .popup:hover .popuptext {
+      visibility: visible;
     }
   }
 
@@ -59,7 +63,7 @@
   content: "";
   position: absolute;
   top: -18%;
-  left: 90%;
+  left: 88%;
   margin-left: 0px;
   border-width: 5px;
   border-style: solid;

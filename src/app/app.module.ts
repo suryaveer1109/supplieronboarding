@@ -7,23 +7,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HttpService } from './http.service';
-import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import  { HttpClientModule } from '@angular/common/http';
 import { AppUrlComponent } from './app-url/app-url.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponent,
-    PortfolioListComponent
+    routingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule, HttpClientModule
+    MaterialModule, HttpClientModule, NgxSpinnerModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

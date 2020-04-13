@@ -2,11 +2,6 @@
 <mat-tab-group color="accent" (selectedTabChange)="tabChange($event)">
     <mat-tab label="Portfolio" > 
 
-        <!-- <mat-radio-group [(ngModel)]="search.type" #radioGroup="matRadioGroup" name="searchType">
-            <mat-radio-button value='portfolio'>Portfolio</mat-radio-button>
-            <mat-radio-button value='application'>Application</mat-radio-button>
-        </mat-radio-group> -->
-    
         <mat-form-field class="full-width">
             <mat-label>Search Text</mat-label>
             <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
@@ -26,10 +21,10 @@
                     {{p.content}}
     
                 </p>
-                <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costcenter}}
+                <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costCenter}}
             </mat-card-content>
             <mat-card-actions align="end">
-                <button mat-button color="primary">Detail</button>
+                <button mat-button color="primary" (click)="openProtfolioDetail(p)">Detail</button>
                 <button mat-button color="primary">View Projects</button>
             </mat-card-actions>
         </mat-card>

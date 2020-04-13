@@ -5,15 +5,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private messageSource = new BehaviorSubject('default message');
+  private dataSource = new BehaviorSubject('NOT_AVAILABLE');
   private appUrl = new BehaviorSubject('http://localhost:8080');
-  currentMessage = this.messageSource.asObservable();
+  currentData = this.dataSource.asObservable();
   currentAppUrl = this.appUrl.asObservable();
 
   constructor() { }
 
-  changeMessage(message: string) {
-    this.messageSource.next(message);
+  changeData(data: string) {
+    this.dataSource.next(data);
   }
 
   changeAppUrl(urlCode: string) {

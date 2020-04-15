@@ -1,31 +1,29 @@
 <div class="container">
-<mat-tab-group color="accent" (selectedTabChange)="tabChange($event)">
+    
+<mat-tab-group color="accent" (selectedTabChange)="tabChange($event);" [(selectedIndex)]="selectedIndex">
     <mat-tab label="Portfolio" > 
 
         <mat-form-field class="full-width">
             <mat-label>Search Text</mat-label>
             <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
         </mat-form-field>
-        <button mat-icon-button (click)="searchData('portfolio')">
+        <button mat-icon-button (click)="searchData('portfolio','')">
             <mat-icon>search</mat-icon>
           </button>
     
-        <mat-card class="card" *ngFor="let p of portfolios">
+        <mat-card class="card" *ngFor="let p of portfolio_project_list">
             <mat-card-header>
                 <mat-card-title>{{p.title}}</mat-card-title>
                 <mat-card-subtitle>{{p.subtitle}}</mat-card-subtitle>
             </mat-card-header>
            
             <mat-card-content>
-                <p>
-                    {{p.content}}
-    
-                </p>
+                <p>{{p.content}}</p>
                 <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costCenter}}
             </mat-card-content>
             <mat-card-actions align="end">
                 <button mat-button color="primary" (click)="openProtfolioDetail(p)">Detail</button>
-                <button mat-button color="primary">View Projects</button>
+                <button mat-button color="primary" (click)="openProjectDetail(p)">View Projects</button>
             </mat-card-actions>
         </mat-card>
     </mat-tab>
@@ -35,9 +33,27 @@
             <mat-label>Search Text</mat-label>
             <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
         </mat-form-field>
-        <button mat-icon-button (click)="searchData('projects')">
+        <button mat-icon-button (click)="searchData('projects','')">
             <mat-icon>search</mat-icon>
           </button>
+
+            <button mat-button *ngIf="portfolioBtnEnabled" (click)="portfolioBtnEnabled=false">
+                {{currentPortfolio?.title}}  <mat-icon>close</mat-icon>
+            </button>
+          <mat-card class="card" *ngFor="let p of portfolio_project_list">
+            <mat-card-header>
+                <mat-card-title>{{p.projectShortName}}</mat-card-title>
+                <mat-card-subtitle>{{p.projectName}}</mat-card-subtitle>
+            </mat-card-header>
+           
+            <mat-card-content>
+                <p>{{p.projectDescription}}</p>
+                <strong> Manager:</strong> {{p.manager}} | <strong>Cost:</strong> {{p.cost}}
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-button color="primary" (click)="openProtfolioDetail(p)">Detail</button>
+            </mat-card-actions>
+        </mat-card>
     </mat-tab>
 
   </mat-tab-group>

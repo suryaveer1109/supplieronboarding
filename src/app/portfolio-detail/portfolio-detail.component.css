@@ -3,17 +3,18 @@
     max-width: 200px;
     width: 100%;
   }
-  
+
   .full-width {
     width: 70%;
     min-width: 300px;
   }
 
-  .mat-line-heading{
-    font-weight: 600 !important; 
-  }
-
-  .mat-line-textfamily{
+  .portfolio{
+    width: 90%;
+    word-break: break-word;
     font-family: sans-serif;
   }
 
+  hr {
+    border: 1px solid #e4a0cf;
+}

@@ -4,38 +4,13 @@
     <h2 style="display: inline;">Portfolio Detail</h2> <button mat-button *ngIf="!editTemplate" color="primary"
         style="padding-left: 10px;" (click)="edit()">Edit</button>
 
-    <!-- <div *ngIf="false" novalidate>
-        <mat-label><strong>Title:  </strong></mat-label>{{portfolio.title}}<div class="mt-2"></div>
-        <mat-label><strong>SubTitle:  </strong></mat-label>{{portfolio.subtitle}}<div class="mt-2"></div>
-        <mat-label><strong>Content:  </strong></mat-label>{{portfolio.content}}<div class="mt-2"></div>
-        <mat-label><strong>Manager:  </strong></mat-label>{{portfolio.manager}}<div class="mt-2"></div>
+    <div *ngIf="!editTemplate" class="portfolio mt-3" novalidate>
+        <mat-label><strong>Title:  </strong></mat-label>{{portfolio.title}}<div class="mt-2"></div><hr>
+        <mat-label><strong>SubTitle:  </strong></mat-label>{{portfolio.subtitle}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Content:  </strong></mat-label>{{portfolio.content}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Manager:  </strong></mat-label>{{portfolio.manager}}<div class="mt-2"></div><hr>
         <mat-label><strong>Cost Center:  </strong></mat-label>{{portfolio.costCenter}}<div class="mt-2"></div>
-    </div> -->
-
-<mat-list *ngIf="!editTemplate">
-  <!-- <div mat-subheader>Details</div> -->
-  <mat-list-item class="mat-line-textfamily">
-    <div class="mat-line-heading mat-line-textfamily" mat-line>Title:</div>
-    <div  mat-line> {{portfolio.title}}</div>
-  </mat-list-item><mat-divider></mat-divider>
-  <mat-list-item >
-    <div class="mat-line-heading mat-line-textfamily" mat-line>SubTitle:</div>
-    <div mat-line> {{portfolio.subtitle}}</div>
-  </mat-list-item><mat-divider></mat-divider>
-  <mat-list-item >
-    <div class="mat-line-heading mat-line-textfamily" mat-line>Content:</div>
-    <div mat-line matTooltip="{{portfolio.content}}"> {{portfolio.content}}</div>
-  </mat-list-item><mat-divider></mat-divider>
-  <mat-list-item >
-    <div class="mat-line-heading mat-line-textfamily" mat-line>Manager:</div>
-    <div mat-line> {{portfolio.manager}}</div>
-  </mat-list-item><mat-divider></mat-divider>
-  <mat-list-item >
-    <div class="mat-line-heading mat-line-textfamily" mat-line>Cost Center:</div>
-    <div mat-line> {{portfolio.costCenter}}</div>
-  </mat-list-item>
-</mat-list>
-
+    </div>
 
     <form *ngIf="editTemplate" #portfolioForm="ngForm" novalidate>
         <mat-form-field class="full-width">

@@ -21,7 +21,7 @@ export class AppUrlComponent implements OnInit {
 
   public static readonly PORTFOLIO_APP_MENUS = '/getMenuList';
   
-  public static readonly PORTFOLIO_APP_DETAILS = '/getDetails';
+  public static readonly PORTFOLIO_APP_DETAILS = '/getPortfolioProjectDetails';
   
   constructor() { }
 

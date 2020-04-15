@@ -71,7 +71,7 @@ export class PortfolioListComponent implements OnInit {
     let snackbarRef = this._snackBar.open(message, action, { duration: AppUrlComponent.durationInSeconds * 1000 });
   };
 
-  openProtfolioDetail(portfolio) {
+  openPortfolioDetail(portfolio) {
     this.data.changeData(portfolio);
     this.router.navigate(['/portfolioDetail']);
   };
@@ -81,5 +81,10 @@ export class PortfolioListComponent implements OnInit {
     this.currentPortfolio = portfolio;
     this.portfolioBtnEnabled = true;
     this.searchData('projects', portfolio);
+  };
+
+  openProject(project) {
+    this.data.changeData(project);
+    this.router.navigate(['/projectDetail']);
   };
 }

@@ -9,6 +9,7 @@ import { MenuAddComponent } from './menu-add/menu-add.component';
 import { AppUrlComponent } from './app-url/app-url.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 
 const routes: Routes = [
@@ -19,11 +20,12 @@ const routes: Routes = [
   {path: 'menuAdd',component:MenuAddComponent},
   {path: 'portfolioList',component:PortfolioListComponent},
   {path: 'portfolioDetail',component:PortfolioDetailComponent},
+  {path: 'projectDetail',component:ProjectDetailComponent},
   {path: '**',component:PageNotFoundComponent}
 ];
 
 export const routingComponent = [UserDetailsComponent, ContentComponent, SignupComponent,
-  PageNotFoundComponent, NavbarComponent, MenuAddComponent, PortfolioListComponent, AppUrlComponent, PortfolioDetailComponent];
+  PageNotFoundComponent, NavbarComponent, MenuAddComponent, PortfolioListComponent, AppUrlComponent, PortfolioDetailComponent, ProjectDetailComponent];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

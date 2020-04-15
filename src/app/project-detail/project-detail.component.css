@@ -1,0 +1,20 @@
+.form {
+    min-width: 150px;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .full-width {
+    width: 70%;
+    min-width: 300px;
+  }
+
+  .project{
+    width: 90%;
+    word-break: break-word;
+    font-family: sans-serif;
+  }
+
+  hr {
+    border: 1px solid #e4a0cf;
+}

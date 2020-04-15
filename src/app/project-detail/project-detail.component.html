@@ -1,0 +1,62 @@
+<a color="primary" routerLink='/portfolioList' style="padding-left: 10px;">Back</a>
+<div class="container">
+
+    <h2 style="display: inline;">Project Detail</h2> <button mat-button *ngIf="!editTemplate" color="primary"
+        style="padding-left: 10px;" (click)="edit()">Edit</button>
+
+    <div *ngIf="!editTemplate" class="project mt-3" novalidate>
+        <mat-label><strong>Title:  </strong></mat-label>{{project.projectShortName}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Full Name:  </strong></mat-label>{{project.projectName}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Description:  </strong></mat-label>{{project.projectDescription}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Manager:  </strong></mat-label>{{project.manager}}<div class="mt-2"></div><hr>
+        <mat-label><strong>Cost:  </strong></mat-label>{{project.cost}}<div class="mt-2"></div>
+    </div>
+
+    <form *ngIf="editTemplate" #projectForm="ngForm" novalidate>
+        <mat-form-field class="full-width">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" placeholder="Enter Title" #title="ngModel" [(ngModel)]="project.projectShortName"
+                name="title" required>
+            <small class="text-danger" [class.d-none]="title.valid || title.untouched">Project title is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput type="text" placeholder="Enter full name" #fullName="ngModel"
+                [(ngModel)]="project.projectName" name="fullName" required>
+            <small class="text-danger" [class.d-none]="fullName.valid || fullName.untouched">Project name is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput type="text" placeholder="Enter Description" #description="ngModel"
+                [(ngModel)]="project.projectDescription" name="description" required></textarea>
+            <small class="text-danger" [class.d-none]="description.valid || description.untouched">Description is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Manager</mat-label>
+            <input matInput type="text" placeholder="Enter Manager Name" #manager="ngModel"
+                [(ngModel)]="project.manager" name="manager" required>
+            <small class="text-danger" [class.d-none]="manager.valid || manager.untouched">Manager name is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field class="full-width">
+            <mat-label>Cost Center</mat-label>
+            <input matInput type="text" placeholder="Enter Cost Center" #cost="ngModel"
+                [(ngModel)]="project.cost" name="cost" required>
+            <small class="text-danger" [class.d-none]="cost.valid || cost.untouched">Cost is
+                required</small>
+        </mat-form-field> <br>
+
+        <button mat-raised-button color="primary" style="margin-top: 10px;" [disabled]="projectForm.form.invalid"
+            (click)="save()">
+            Save
+        </button>
+    </form>
+
+</div>

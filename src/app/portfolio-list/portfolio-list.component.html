@@ -22,7 +22,7 @@
                 <strong> Manager:</strong> {{p.manager}} | <strong>Cost Center:</strong> {{p.costCenter}}
             </mat-card-content>
             <mat-card-actions align="end">
-                <button mat-button color="primary" (click)="openProtfolioDetail(p)">Detail</button>
+                <button mat-button color="primary" (click)="openPortfolioDetail(p)">Detail</button>
                 <button mat-button color="primary" (click)="openProjectDetail(p)">View Projects</button>
             </mat-card-actions>
         </mat-card>
@@ -51,7 +51,7 @@
                 <strong> Manager:</strong> {{p.manager}} | <strong>Cost:</strong> {{p.cost}}
             </mat-card-content>
             <mat-card-actions align="end">
-                <button mat-button color="primary" (click)="openProtfolioDetail(p)">Detail</button>
+                <button mat-button color="primary" (click)="openProject(p)">Detail</button>
             </mat-card-actions>
         </mat-card>
     </mat-tab>

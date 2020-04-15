@@ -15,7 +15,7 @@ export class AppUrlComponent implements OnInit {
 
   public static readonly durationInSeconds = 3;
   
-  public static readonly SERVICE_URL= 'https://portfolioprojecttracker.herokuapp.com/'; // 'http://localhost:8080';
+  public static readonly SERVICE_URL= 'https://portfolioprojecttracker.herokuapp.com'; // 'http://localhost:8080';
   
   public static readonly USER_DETAILS = '/assets/data/users.json';
 

@@ -15,13 +15,13 @@
 
 @media screen and (max-width: 500px) {
     #app_title:before {
-      content: "SOB";
+      content: "SOB Portal";
     }
   }
   
   @media screen and (min-width: 501px) {
     #app_title:before {
-      content: "Supplier On-Boarding";
+      content: "Supplier On-Boarding Portal";
     }
 
     .popup:hover .popuptext {

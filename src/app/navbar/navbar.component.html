@@ -33,14 +33,15 @@
             </ng-container>
           </mat-menu>
 
-         <a href="dashobard"> <img src="assets/image/jlr-logo.png" height="48px" width="96px" /> </a>
+         <a href="/"> <img src="assets/image/jlr-logo.png" height="48px" width="96px" /> </a>
       <span style="margin-left:10px;" id="app_title"></span>
  
           <div class="spacer"></div>
+          <a href="/" style="font-size: 15px;margin-right: 20px;">Logout</a>
           <span class="parentpopup">
           <a mat-mini-fab color="accent" class="popup" >
             <mat-icon (click)="myFunction()" >account_circle</mat-icon>
-            <span class="popuptext" id="myPopup">
+            <span class="popuptext" id="myPopup"><strong>Admin</strong><br>
               <strong>Last Login:</strong> {{today | date:'medium'}}<br>Other details coming soon..
             </span>
           </a>

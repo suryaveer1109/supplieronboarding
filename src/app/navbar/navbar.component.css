@@ -11,13 +11,13 @@
 
 @media screen and (max-width: 500px) {
     #app_title:before {
-      content: "PPT";
+      content: "SOB";
     }
   }
   
   @media screen and (min-width: 501px) {
     #app_title:before {
-      content: "Portfolio Project Tracker";
+      content: "Supplier On-Boarding";
     }
 
     .popup:hover .popuptext {
@@ -50,8 +50,8 @@
   padding: 8px 0;
   position: absolute;
   z-index: 100;
-  bottom: -190%;
-  left: -290%;
+  bottom: -260%;
+  left: -276%;
   margin-left: -80px;
   border-style: solid;
   border-color: #ff4d86;

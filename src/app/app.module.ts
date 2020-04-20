@@ -10,11 +10,13 @@ import { HttpService } from './http.service';
 import  { HttpClientModule } from '@angular/common/http';
 import { AppUrlComponent } from './app-url/app-url.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponent
+    routingComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

@@ -20,25 +20,21 @@ export class NavbarComponent implements OnInit {
   private err;
   private appUrl;
 
-  public menuInfo 
-  // = [
-  //   {
-  //     name: "Home", link: "",
-  //     subMenu: [{ name: "Portfolios", link: "portfolioList" }]
-  //   },
-  //   {
-  //     name: "Service", link: "",
-  //     subMenu: [{ name: "User Details", link: "userDetails" }]
-  //   },
-  //   {
-  //     name: "App Management", link: "",
-  //     subMenu: [{ name: "Add New Menu", link: "menuAdd" }]
-  //   },
-  //   { name: "Add App code", link: "content", subMenu: null },
-  //   { name: "About Us", link: "test", subMenu: null },
-  //   { name: "Sign Up", link: "signup", subMenu: null },
-  //   { name: "Logout", link: "test", subMenu: null }
-  // ];
+  public menuInfo = [
+    {
+      name: "Home", link: "",
+      subMenu: [{ name: "New Supplier Request", link: "test" }]
+    },
+    {
+      name: "Service", link: "",
+      subMenu: [{ name: "User Details", link: "userDetails" }]
+    },
+    {
+      name: "App Management", link: "",
+      subMenu: [{ name: "Add New User", link: "signup" }]
+    },
+    { name: "About Us", link: "test", subMenu: null }
+  ];
 
   constructor(private _httpService: HttpService,
     private _snackBar: MatSnackBar,
@@ -68,26 +64,31 @@ export class NavbarComponent implements OnInit {
   }
 
   getMenus() {
-    this.spinner.show();
+    
+     this.spinner.show();
 
-    this.data.currentAppUrl.subscribe(appUrl => this.appUrl = appUrl);
-    this._httpService.getRequest(this.appUrl + AppUrlComponent.PORTFOLIO_APP_MENUS)
-      .subscribe(
-        data => {
-          this.menuInfo = data?.data;
-          console.log(JSON.stringify(this.menuInfo));
-          this.menuError=false;
-          setTimeout(() => {
-            this.spinner.hide();
-          }, 2000);
-        },
-        error => {
-          this.err = error?.message;
-          this.spinner.hide();
-          this.menuError=true;
-          this.openSnackBar(this.err, "Close");
-          this.router.navigate(['/content']);
-        });
+     setTimeout(() => {
+              this.spinner.hide();
+            }, 2000);
+
+    // this.data.currentAppUrl.subscribe(appUrl => this.appUrl = appUrl);
+    // this._httpService.getRequest(this.appUrl + AppUrlComponent.PORTFOLIO_APP_MENUS)
+    //   .subscribe(
+    //     data => {
+    //       this.menuInfo = data?.data;
+    //       console.log(JSON.stringify(this.menuInfo));
+    //       this.menuError=false;
+    //       setTimeout(() => {
+    //         this.spinner.hide();
+    //       }, 1000);
+    //     },
+    //     error => {
+    //       this.err = error?.message;
+    //       this.spinner.hide();
+    //       this.menuError=true;
+    //       this.openSnackBar(this.err, "Close");
+    //       this.router.navigate(['/content']);
+    //     });
   };
 
   openSnackBar(message, action) {

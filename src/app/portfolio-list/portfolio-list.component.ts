@@ -6,7 +6,6 @@ import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
-
 @Component({
   selector: 'app-portfolio-list',
   templateUrl: './portfolio-list.component.html',
@@ -49,7 +48,7 @@ export class PortfolioListComponent implements OnInit {
           this.portfolio_project_list = data?.data; this.search.text = "";
           setTimeout(() => {
             this.spinner.hide();
-          }, 2000);
+          }, 1000);
         },
         error => {
           this.err = error?.message;

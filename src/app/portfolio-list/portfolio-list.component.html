@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" >
     
 <mat-tab-group color="accent" (selectedTabChange)="tabChange($event);" [(selectedIndex)]="selectedIndex">
     <mat-tab label="Portfolio" > 
-
+        
         <mat-form-field class="full-width">
             <mat-label>Search Text</mat-label>
             <input matInput placeholder="Enter text to search" [(ngModel)]="search.text" name="searchText">
@@ -11,7 +11,7 @@
             <mat-icon>search</mat-icon>
           </button>
     
-        <mat-card class="card" *ngFor="let p of portfolio_project_list">
+        <mat-card class="card" *ngFor="let p of portfolio_project_list" >
             <mat-card-header>
                 <mat-card-title>{{p.title}}</mat-card-title>
                 <mat-card-subtitle>{{p.subtitle}}</mat-card-subtitle>

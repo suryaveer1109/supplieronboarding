@@ -1,7 +1,35 @@
 <h1>Supplier On Boarding portal</h1>
 
-<div class="container center">
-    <a mat-button target="_blank" color="primary" (click)="loginUser()">Login as internal user</a><br>
+<div class="container center1" *ngIf="!externalUser">
+    <div><u>Login As</u></div>
+    <a mat-button target="_blank" color="primary" (click)="loginUser()">Internal user</a><br>
 
-    <a mat-button target="_blank" color="accent" (click)="loginUser()">Login as external user</a>
+    <a mat-button target="_blank" color="accent" (click)="externalUser=true">External user</a>
+</div>
+
+<div class="container center2" *ngIf="externalUser"> Enter Credentials<br>
+    <form #userForm="ngForm" novalidate>
+        
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" [(ngModel)]="userModel.username" name="username" #username="ngModel" required>
+            <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is
+                required</small>
+        </mat-form-field> <br>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" style="max-width: 500px;" #password="ngModel" required
+              [class.is-invalid]="password.invalid && password.touched" name="password" [(ngModel)]="userModel.password">
+            <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+        </mat-form-field> <br>
+
+    </form>
+
+    <button mat-stroked-button color="primary" style="margin: 5px;" [disabled]="userForm.form.invalid" (click)="loginUser()">
+        Login
+    </button>
+    <button mat-stroked-button color="primary" style="margin: 5px;" (click)="externalUser=false">
+        Back
+    </button>
 </div>

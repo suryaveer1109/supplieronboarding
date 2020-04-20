@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
     },
     {
       name: "Service", link: "",
-      subMenu: [{ name: "User Details", link: "userDetails" }]
+      subMenu: [{ name: "User Management", link: "userDetails" }]
     },
     {
       name: "App Management", link: "",
@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMenus();
+    localStorage.setItem("User", 'Suryaveer Singh');
   }
 
   checkSubmenu(subMenu: any): boolean {

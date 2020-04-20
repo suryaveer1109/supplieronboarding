@@ -9,7 +9,12 @@ export class LoginPageComponent implements OnInit {
 
   constructor() { }
   loginSuccess = 'true';
-
+  externalUser = false;
+  userModel={
+    username:'',
+    password:''
+  }
+  
   @Output() messageEvent = new EventEmitter<string>();
   
   ngOnInit(): void {
@@ -21,4 +26,5 @@ export class LoginPageComponent implements OnInit {
     this.loginSuccess = 'true';
     this.messageEvent.emit(this.loginSuccess);
   }
+
 }

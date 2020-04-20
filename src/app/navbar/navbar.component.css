@@ -9,6 +9,10 @@
     z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 }
 
+.icon-color {
+  color: #364f6b;
+}
+
 @media screen and (max-width: 500px) {
     #app_title:before {
       content: "SOB";
